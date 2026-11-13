@@ -1,0 +1,25 @@
+package com.zc.startai;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.ai.deepseek.DeepSeekChatModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import reactor.core.publisher.Flux;
+
+@SpringBootTest
+class StartAiApplicationTests {
+
+    @Test
+    void testDeepSeek(@Autowired DeepSeekChatModel deepSeekChatModel) {
+        String call = deepSeekChatModel.call("你好，你是谁？");
+        System.out.println(call);
+    }
+
+    @Test
+    void testDeepSeekStream(@Autowired DeepSeekChatModel deepSeekChatModel) {
+        Flux<String> stream = deepSeekChatModel.stream("你好，你是谁？");
+        stream.
+    }
+
+
+}
